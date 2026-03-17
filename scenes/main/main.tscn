@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bp3ysfpphq4kk"]
+
+[ext_resource type="PackedScene" uid="uid://c57scjm6loqve" path="res://entities/cue_ball/cue_ball.tscn" id="1_iuonh"]
+[ext_resource type="Script" uid="uid://bbsdtw4gn4dd7" path="res://scenes/main/main.gd" id="1_k2fmo"]
+[ext_resource type="PackedScene" uid="uid://b1c1gfisa2nyy" path="res://commons/shaders/CRT/CRTShader.tscn" id="2_6q06x"]
+[ext_resource type="PackedScene" uid="uid://vmemxeplkwwl" path="res://scenes/main/pool_table.tscn" id="2_l3cfh"]
+[ext_resource type="PackedScene" uid="uid://d1bjxv5s2mgi1" path="res://scenes/main/ball_spawner.tscn" id="3_k2fmo"]
+
+[node name="Main" type="Node2D" unique_id=1832968903]
+script = ExtResource("1_k2fmo")
+
+[node name="CrtShader" parent="." unique_id=1474878067 instance=ExtResource("2_6q06x")]
+visible = false
+
+[node name="CueBall" parent="." unique_id=572589105 instance=ExtResource("1_iuonh")]
+position = Vector2(286, 290)
+
+[node name="BallSpawner" parent="." unique_id=424850098 instance=ExtResource("3_k2fmo")]
+position = Vector2(765, 298)
+
+[node name="PoolTable" parent="." unique_id=2077793357 instance=ExtResource("2_l3cfh")]

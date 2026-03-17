@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b1c1gfisa2nyy"]
+
+[ext_resource type="Script" uid="uid://mh733haygni0" path="res://commons/shaders/CRT/crt_shader.gd" id="1_7w88f"]
+[ext_resource type="Shader" uid="uid://cjf7xno67qa0g" path="res://commons/shaders/CRT/CRTShader.gdshader" id="1_jpah6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jpah6"]
+shader = ExtResource("1_jpah6")
+shader_parameter/pixel_size = 0.3
+shader_parameter/scanline_intensity = 0.3
+shader_parameter/vignette_intensity = 0.25
+shader_parameter/color_depth = 16.0
+shader_parameter/glow_strength = 0.15
+shader_parameter/glow_spread = 2.0
+
+[node name="CrtShader" type="CanvasLayer" unique_id=1474878067]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=58161603]
+z_index = 101
+material = SubResource("ShaderMaterial_jpah6")
+offset_right = 1164.0
+offset_bottom = 653.0
+script = ExtResource("1_7w88f")

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c57scjm6loqve"]
+
+[ext_resource type="Script" uid="uid://d3w3fmfc7eeop" path="res://entities/cue_ball/cue_ball.gd" id="1_gob6i"]
+[ext_resource type="PackedScene" uid="uid://c88aglk85knlr" path="res://commons/shapes/circle/circle.tscn" id="1_laque"]
+[ext_resource type="PackedScene" uid="uid://cneffgc3gx6e2" path="res://entities/cue_ball/cue_ball_input.tscn" id="2_4bjnu"]
+[ext_resource type="PackedScene" uid="uid://du6e2p7e4spwi" path="res://entities/cue_ball/cue_stick.tscn" id="2_v2ejv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4bjnu"]
+radius = 17.029387
+
+[node name="CueBall" type="RigidBody2D" unique_id=572589105]
+gravity_scale = 0.0
+script = ExtResource("1_gob6i")
+
+[node name="CueStick" parent="." unique_id=840116479 instance=ExtResource("2_v2ejv")]
+
+[node name="Circle" parent="." unique_id=2061173925 instance=ExtResource("1_laque")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1931177381]
+shape = SubResource("CircleShape2D_4bjnu")
+
+[node name="CueBallInput" parent="." unique_id=1369440188 instance=ExtResource("2_4bjnu")]

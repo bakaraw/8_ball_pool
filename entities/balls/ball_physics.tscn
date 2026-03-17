@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://m2m516vumo3r"]
+
+[sub_resource type="GDScript" id="GDScript_y4d4l"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="BallPhysics" type="Node2D" unique_id=1425708115]
+script = SubResource("GDScript_y4d4l")

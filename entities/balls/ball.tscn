@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c2vu31jrm2o58"]
+
+[ext_resource type="Script" uid="uid://cawk5alnrmoxw" path="res://entities/balls/ball.gd" id="1_8ef64"]
+[ext_resource type="PackedScene" uid="uid://c88aglk85knlr" path="res://commons/shapes/circle/circle.tscn" id="1_snpqs"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_snpqs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8ef64"]
+radius = 17.029387
+
+[node name="Ball" type="RigidBody2D" unique_id=997828208]
+physics_material_override = SubResource("PhysicsMaterial_snpqs")
+gravity_scale = 0.0
+script = ExtResource("1_8ef64")
+
+[node name="Circle" parent="." unique_id=2061173925 instance=ExtResource("1_snpqs")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1497773816]
+shape = SubResource("CircleShape2D_8ef64")

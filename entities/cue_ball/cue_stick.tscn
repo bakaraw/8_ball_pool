@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://du6e2p7e4spwi"]
+
+[ext_resource type="Script" uid="uid://dbxlw0gkp54ie" path="res://entities/cue_ball/cue_stick.gd" id="1_2dths"]
+
+[node name="CueStick" type="Node2D" unique_id=840116479]
+script = ExtResource("1_2dths")
