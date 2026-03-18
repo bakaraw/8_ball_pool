@@ -10,12 +10,11 @@
 script = ExtResource("1_k2fmo")
 
 [node name="CrtShader" parent="." unique_id=1474878067 instance=ExtResource("2_6q06x")]
-visible = false
 
 [node name="CueBall" parent="." unique_id=572589105 instance=ExtResource("1_iuonh")]
-position = Vector2(286, 290)
+position = Vector2(286, 310)
 
 [node name="BallSpawner" parent="." unique_id=424850098 instance=ExtResource("3_k2fmo")]
-position = Vector2(765, 298)
+position = Vector2(765, 310)
 
 [node name="PoolTable" parent="." unique_id=2077793357 instance=ExtResource("2_l3cfh")]
