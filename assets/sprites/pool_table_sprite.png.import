@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwnwsoqjq88lx"
-path="res://.godot/imported/pool_table_sprite.jpg-b78ec758ac241dc680ebc3c59264a205.ctex"
+uid="uid://b8j4yuekpr8nc"
+path="res://.godot/imported/pool_table_sprite.png-50f3dcd3cb8cb9b236fdf4d517dafc49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/pool_table_sprite.jpg"
-dest_files=["res://.godot/imported/pool_table_sprite.jpg-b78ec758ac241dc680ebc3c59264a205.ctex"]
+source_file="res://assets/sprites/pool_table_sprite.png"
+dest_files=["res://.godot/imported/pool_table_sprite.png-50f3dcd3cb8cb9b236fdf4d517dafc49.ctex"]
 
 [params]
 

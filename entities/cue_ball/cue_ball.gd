@@ -22,7 +22,7 @@ func _ready() -> void:
 	z_as_relative = false 
 	lock_rotation = true
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if _is_cue_ball_moving():
 		cue_stick_visible = false
 		cue_stick_sprite.visible = false

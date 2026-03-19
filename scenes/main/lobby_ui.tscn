@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://cv46dbbfcam04"]
+
+[ext_resource type="Script" path="res://scenes/main/lobby_ui.gd" id="1_a2b3c"]
+
+[node name="LobbyUI" type="Control" unique_id=48427645]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a2b3c")
+
+[node name="BackgroundColor" type="ColorRect" parent="." unique_id=1931578140]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.490196)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2032780527]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -100.0
+offset_right = 150.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=923908602]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "POOL MULTIPLAYER"
+horizontal_alignment = 1
+
+[node name="RoomCodeInput" type="LineEdit" parent="VBoxContainer" unique_id=261024381]
+layout_mode = 2
+placeholder_text = "Enter IP or Room Code (default 127.0.0.1)"
+alignment = 1
+
+[node name="HostButton" type="Button" parent="VBoxContainer" unique_id=602230066]
+layout_mode = 2
+text = "HOST GAME"
+
+[node name="JoinButton" type="Button" parent="VBoxContainer" unique_id=1824963923]
+layout_mode = 2
+text = "JOIN GAME"
+
+[node name="StatusLabel" type="Label" parent="VBoxContainer" unique_id=839041263]
+layout_mode = 2
+text = "Waiting..."
+horizontal_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/HostButton" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="VBoxContainer/JoinButton" to="." method="_on_join_pressed"]

@@ -11,13 +11,13 @@ func _ready()-> void:
 	z_as_relative = false
 	y_sort_enabled = false
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	queue_redraw()
 	
 func _draw() -> void:
 	draw_cue_stick_placeholder(-cue_ball.direction)
 	
-func draw_cue_stick_placeholder(direction: Vector2):
-	var start = direction * (30.0 + cue_stick_offset)
-	var end = direction * (200.0 + cue_stick_offset)
+func draw_cue_stick_placeholder(p_direction: Vector2):
+	var start = p_direction * (30.0 + cue_stick_offset)
+	var end = p_direction * (200.0 + cue_stick_offset)
 	draw_line(start, end, Color.WHITE, 3.0)

@@ -11,7 +11,7 @@ var drag_distance = 0.0
 var max_drag = 100.0 
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if is_dragging:
 		print(drag_distance)
 		get_drag_distance()
