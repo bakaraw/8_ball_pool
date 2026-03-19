@@ -1,9 +1,7 @@
 extends Node2D
+class_name CueBallTrajectory
 @onready var cue_ball = get_parent()
 #var direction
-
-func _process(_delta: float) -> void:
-	queue_redraw()
 	
 func _draw() -> void:
 	_draw_trajectory()

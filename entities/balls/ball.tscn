@@ -11,6 +11,7 @@ radius = 17.029387
 [node name="Ball" type="RigidBody2D" unique_id=997828208]
 physics_material_override = SubResource("PhysicsMaterial_snpqs")
 gravity_scale = 0.0
+continuous_cd = 2
 script = ExtResource("1_8ef64")
 
 [node name="Circle" parent="." unique_id=2061173925 instance=ExtResource("1_snpqs")]

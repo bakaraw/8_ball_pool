@@ -18,3 +18,7 @@ config/name="8_pool_ball"
 run/main_scene="uid://bp3ysfpphq4kk"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[physics]
+
+common/physics_ticks_per_second=120
