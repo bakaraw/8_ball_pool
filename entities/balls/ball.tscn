@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cawk5alnrmoxw" path="res://entities/balls/ball.gd" id="1_8ef64"]
 [ext_resource type="PackedScene" uid="uid://c88aglk85knlr" path="res://commons/shapes/circle/circle.tscn" id="1_snpqs"]
+[ext_resource type="Script" uid="uid://c3232cn652haa" path="res://entities/balls/ball_moving_detector.gd" id="3_w5kjr"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_snpqs"]
 
@@ -18,3 +19,7 @@ script = ExtResource("1_8ef64")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1497773816]
 shape = SubResource("CircleShape2D_8ef64")
+
+[node name="BallMovingDetector" type="Node" parent="." unique_id=406813434]
+script = ExtResource("3_w5kjr")
+metadata/_custom_type_script = "uid://c3232cn652haa"
