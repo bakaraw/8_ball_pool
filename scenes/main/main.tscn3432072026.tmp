@@ -19,18 +19,13 @@ script = ExtResource("1_k2fmo")
 
 [node name="CrtShader" parent="." unique_id=1474878067 instance=ExtResource("2_6q06x")]
 
-[node name="CueBall" parent="." unique_id=572589105 node_paths=PackedStringArray("spawn_position_marker") instance=ExtResource("1_iuonh")]
+[node name="CueBall" parent="." unique_id=572589105 instance=ExtResource("1_iuonh")]
 position = Vector2(286, 310)
-spawn_position_marker = NodePath("../CueBallSpawnPosition")
 
 [node name="BallManager" parent="." unique_id=424850098 instance=ExtResource("3_k2fmo")]
 position = Vector2(765, 310)
 
-[node name="PoolTable" parent="." unique_id=2077793357 node_paths=PackedStringArray("ball_manager") instance=ExtResource("2_l3cfh")]
-ball_manager = NodePath("../BallManager")
-
-[node name="CueBallSpawnPosition" type="Marker2D" parent="." unique_id=691738561]
-position = Vector2(320, 320)
+[node name="PoolTable" parent="." unique_id=2077793357 instance=ExtResource("2_l3cfh")]
 
 [node name="StateMachine" type="Node" parent="." unique_id=2126996678 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("6_ow5a4")
@@ -50,9 +45,8 @@ metadata/_custom_type_script = "uid://dwfnwbmhpk47i"
 script = ExtResource("7_hujxm")
 metadata/_custom_type_script = "uid://bjgumnqh8218t"
 
-[node name="BallEvaluation" type="Node" parent="StateMachine" unique_id=914241599 node_paths=PackedStringArray("ball_manager", "cue_ball")]
+[node name="BallEvaluation" type="Node" parent="StateMachine" unique_id=914241599 node_paths=PackedStringArray("cue_ball")]
 script = ExtResource("11_ouso4")
-ball_manager = NodePath("../../BallManager")
 cue_ball = NodePath("../../CueBall")
 metadata/_custom_type_script = "uid://cdyjwavt6ku1f"
 

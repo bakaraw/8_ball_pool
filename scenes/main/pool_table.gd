@@ -2,6 +2,8 @@ extends Node2D
 
 
 # Called when the node enters the scene tree for the first time.
+@export var ball_manager: BallManager
+
 func _ready() -> void:
 	for i in range(1, 7):  # 1 to 6
 		var pocket = get_node("Pocket" + str(i))
@@ -13,7 +15,7 @@ func _ready() -> void:
 	#cue_ball.turn_complete.connect($Shader/UI._on_turn_complete)
 
 func _on_ball_entered(ball, pocket):
-	ball.ball_pocketed(pocket.position)
+	ball.ball_pocketed(pocket)
 
 func _on_cue_ball_entered(ball, pocket):
-	ball.cue_ball_pocketed(pocket.position)
+	ball.cue_ball_pocketed(pocket)

@@ -12,25 +12,19 @@
 [ext_resource type="Script" uid="uid://c2nbn00qmgjlj" path="res://scenes/main/states/play_defensive_cards.gd" id="10_a8run"]
 [ext_resource type="Script" uid="uid://cdyjwavt6ku1f" path="res://scenes/main/states/ball_evaluation.gd" id="11_ouso4"]
 [ext_resource type="Script" uid="uid://cmcpnh4iii4qt" path="res://scenes/main/states/end_turn.gd" id="12_blune"]
-[ext_resource type="Script" uid="uid://duqo0a1of5u3e" path="res://scenes/main/states/game_over.gd" id="13_th5th"]
 
 [node name="Main" type="Node2D" unique_id=1832968903]
 script = ExtResource("1_k2fmo")
 
 [node name="CrtShader" parent="." unique_id=1474878067 instance=ExtResource("2_6q06x")]
 
-[node name="CueBall" parent="." unique_id=572589105 node_paths=PackedStringArray("spawn_position_marker") instance=ExtResource("1_iuonh")]
+[node name="CueBall" parent="." unique_id=572589105 instance=ExtResource("1_iuonh")]
 position = Vector2(286, 310)
-spawn_position_marker = NodePath("../CueBallSpawnPosition")
 
 [node name="BallManager" parent="." unique_id=424850098 instance=ExtResource("3_k2fmo")]
 position = Vector2(765, 310)
 
-[node name="PoolTable" parent="." unique_id=2077793357 node_paths=PackedStringArray("ball_manager") instance=ExtResource("2_l3cfh")]
-ball_manager = NodePath("../BallManager")
-
-[node name="CueBallSpawnPosition" type="Marker2D" parent="." unique_id=691738561]
-position = Vector2(320, 320)
+[node name="PoolTable" parent="." unique_id=2077793357 instance=ExtResource("2_l3cfh")]
 
 [node name="StateMachine" type="Node" parent="." unique_id=2126996678 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("6_ow5a4")
@@ -50,9 +44,9 @@ metadata/_custom_type_script = "uid://dwfnwbmhpk47i"
 script = ExtResource("7_hujxm")
 metadata/_custom_type_script = "uid://bjgumnqh8218t"
 
-[node name="BallEvaluation" type="Node" parent="StateMachine" unique_id=914241599 node_paths=PackedStringArray("ball_manager", "cue_ball")]
+[node name="BallEvaluation" type="Node" parent="StateMachine" unique_id=914241599 node_paths=PackedStringArray("ball_spawner", "cue_ball")]
 script = ExtResource("11_ouso4")
-ball_manager = NodePath("../../BallManager")
+ball_spawner = NodePath("../../BallManager")
 cue_ball = NodePath("../../CueBall")
 metadata/_custom_type_script = "uid://cdyjwavt6ku1f"
 
@@ -64,7 +58,3 @@ metadata/_custom_type_script = "uid://c2nbn00qmgjlj"
 [node name="EndTurn" type="Node" parent="StateMachine" unique_id=2125846754]
 script = ExtResource("12_blune")
 metadata/_custom_type_script = "uid://cmcpnh4iii4qt"
-
-[node name="GameOver" type="Node" parent="StateMachine" unique_id=1935907295]
-script = ExtResource("13_th5th")
-metadata/_custom_type_script = "uid://duqo0a1of5u3e"

@@ -42,9 +42,9 @@ polygon = PackedVector2Array(1056, 586, 1081, 607, 1081, 1056, 600, 1057, 592, 6
 position = Vector2(-4, -4)
 polygon = PackedVector2Array(547, 581, 550, 604, 551, 1059, 62, 1061, 64, 602, 90, 581)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1568707755]
+[node name="Edge6" type="StaticBody2D" parent="." unique_id=1568707755]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=2052729450]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Edge6" unique_id=2052729450]
 position = Vector2(-5, -6)
 polygon = PackedVector2Array(65, 102, 62, 550, 39, 574, -706, 577, -699, 105, 44, 79)
 
@@ -61,7 +61,7 @@ position = Vector2(1087, 586)
 position = Vector2(1086, 64)
 
 [node name="Pocket5" parent="." unique_id=1386241731 instance=ExtResource("2_juvbm")]
-position = Vector2(572, 50)
+position = Vector2(570, 48)
 
 [node name="Pocket6" parent="." unique_id=619608057 instance=ExtResource("2_juvbm")]
 position = Vector2(57, 63)
