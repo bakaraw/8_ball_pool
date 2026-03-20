@@ -28,7 +28,6 @@ func handle_input(event: InputEvent):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if not event.pressed and drag_distance > 0:
-				_release_ball()
 				state_machine.change_state("releasestate")
 			else:
 				state_machine.change_state("aimingstate")

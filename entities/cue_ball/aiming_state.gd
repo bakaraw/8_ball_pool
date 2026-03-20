@@ -20,9 +20,17 @@ func update(_delta: float):
 	cue_stick_sprite.cue_stick_offset = 0.0
 	cue_stick_sprite.queue_redraw()
 	cue_ball_trajectory.queue_redraw()
-	
+
 func handle_input(event: InputEvent):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed:
 				state_machine.change_state("shootingstate")
+
+	if _mouse_over_cue_ball() and Globals.current_player.ball_in_hand:
+		state_machine.change_state("ballinhandstate")
+
+func _mouse_over_cue_ball() -> bool:
+	var mouse_pos = cue_ball.get_global_mouse_position()
+	var circle = cue_ball.get_node("Circle")
+	return mouse_pos.distance_to(cue_ball.global_position) <= circle.radius

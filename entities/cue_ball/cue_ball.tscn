@@ -4,10 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://c88aglk85knlr" path="res://commons/shapes/circle/circle.tscn" id="1_laque"]
 [ext_resource type="PackedScene" uid="uid://du6e2p7e4spwi" path="res://entities/cue_ball/cue_stick.tscn" id="2_v2ejv"]
 [ext_resource type="Script" uid="uid://c7k088j0tj88p" path="res://entities/cue_ball/cue_ball_trajectory.gd" id="5_fidyx"]
+[ext_resource type="Script" uid="uid://c3232cn652haa" path="res://entities/balls/ball_moving_detector.gd" id="5_y0f4w"]
 [ext_resource type="Script" uid="uid://c4x8htscmhykp" path="res://commons/state_machine/state_machine.gd" id="6_r0ald"]
 [ext_resource type="Script" uid="uid://vmbbnlsot080" path="res://entities/cue_ball/aiming_state.gd" id="7_r0ald"]
 [ext_resource type="Script" uid="uid://b6pfi14k3a8vn" path="res://entities/cue_ball/shooting_state.gd" id="8_jmf6n"]
 [ext_resource type="Script" uid="uid://c24ej0bcmtllx" path="res://entities/cue_ball/release_state.gd" id="9_y0f4w"]
+[ext_resource type="Script" uid="uid://7f2k2yse3dyw" path="res://entities/cue_ball/ball_in_hand_state.gd" id="10_fh7an"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4bjnu"]
 radius = 17.029387
@@ -20,12 +22,18 @@ script = ExtResource("1_gob6i")
 [node name="CueStick" parent="." unique_id=840116479 instance=ExtResource("2_v2ejv")]
 
 [node name="Circle" parent="." unique_id=2061173925 instance=ExtResource("1_laque")]
+shadow_color = Color(0, 0, 0, 0.05)
+drop_shadow_on = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1931177381]
 shape = SubResource("CircleShape2D_4bjnu")
 
 [node name="CueBallTrajectory" type="Node2D" parent="." unique_id=184694055]
 script = ExtResource("5_fidyx")
+
+[node name="BallMovingDetector" type="Node" parent="." unique_id=1657094707]
+script = ExtResource("5_y0f4w")
+metadata/_custom_type_script = "uid://c3232cn652haa"
 
 [node name="StateMachine" type="Node" parent="." unique_id=710274505 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("6_r0ald")
@@ -43,3 +51,7 @@ metadata/_custom_type_script = "uid://b6pfi14k3a8vn"
 [node name="ReleaseState" type="Node" parent="StateMachine" unique_id=370346288]
 script = ExtResource("9_y0f4w")
 metadata/_custom_type_script = "uid://c24ej0bcmtllx"
+
+[node name="BallInHandState" type="Node" parent="StateMachine" unique_id=488654063]
+script = ExtResource("10_fh7an")
+metadata/_custom_type_script = "uid://7f2k2yse3dyw"
