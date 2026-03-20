@@ -19,6 +19,10 @@ run/main_scene="uid://bp3ysfpphq4kk"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Globals="*uid://cmu3gh1i5s5yp"
+
 [physics]
 
 common/physics_ticks_per_second=120
