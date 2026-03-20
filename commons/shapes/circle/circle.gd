@@ -1,6 +1,6 @@
 @tool
 extends Node2D
-@export var radius: float = 17.0
+@export var radius: float = Globals.BALL_RADIUS
 @export var color: Color = Color.WHITE
 @export var shadow_color: Color = Color(0, 0, 0, 0.5)
 @export var shadow_offset: Vector2 = Vector2(4, 4)
