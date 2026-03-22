@@ -2,6 +2,7 @@ extends RigidBody2D
 class_name PoolBall
 
 var ball_type: Globals.BallType = Globals.BallType.UNASSIGNED
+var is_ball_pocketed = false
 
 func _ready() -> void:
 	input_pickable = true
@@ -24,10 +25,38 @@ func ball_pocketed(pocket: Pocket):
 	tween.tween_property(circle, "color", Color(circle.color.r, circle.color.g, circle.color.b, 0.0), 0.3)
 	circle.drop_shadow_on = false
 	await tween.finished
+	get_node("CollisionShape2D").disabled = true
 	kill_velocity()
-	queue_free()
+	#queue_free()
 
 func kill_velocity():
 	linear_velocity = Vector2.ZERO
 	angular_velocity = 0.0
 	freeze = true 
+
+func get_ball_type_name() -> String:
+	match ball_type:
+		Globals.BallType.SOLIDS:
+			return "Solids"
+		Globals.BallType.STRIPES:
+			return "Stripes"
+		Globals.BallType.EIGHT_BALL:
+			return "Eight Ball"
+		Globals.BallType.UNASSIGNED:
+			return "Unassigned"
+		_:
+			return "Unknown"
+			
+func get_ball_color_name() -> String:
+	var circle = get_node("Circle")
+	match circle.color:
+		Color.GOLD:
+			return "Gold"
+		Color.DARK_RED:
+			return "Dark Red"
+		Color.BLACK:
+			return "Black"
+		Color.WHITE:
+			return "White"
+		_:
+			return "Unknown"

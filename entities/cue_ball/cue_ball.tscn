@@ -15,8 +15,11 @@
 radius = 17.029387
 
 [node name="CueBall" type="RigidBody2D" unique_id=572589105]
+collision_mask = 11
 gravity_scale = 0.0
 continuous_cd = 2
+contact_monitor = true
+max_contacts_reported = 2
 script = ExtResource("1_gob6i")
 
 [node name="CueStick" parent="." unique_id=840116479 instance=ExtResource("2_v2ejv")]

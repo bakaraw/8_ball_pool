@@ -5,7 +5,6 @@ class_name PlayDefensiveCards
 
 # for future use
 # able to use defensive cards and shit
-
 func enter() -> void:
 	var ball_eval = state_machine.states["ballevaluation"]
 	ball_eval.next_state = "endturn"
@@ -15,6 +14,7 @@ func exit() -> void:
 	pass
 	
 func update(_delta: float):
+	print("defense!!")
 	pass
 	
 func handle_input(_event: InputEvent):

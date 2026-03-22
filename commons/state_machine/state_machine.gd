@@ -30,12 +30,12 @@ func change_state(new_state_name: String):
 	
 	if current_state:
 		current_state.enter()
-	
-	print(
-			"["+ self.get_parent().name +
-			" Current State]: " + 
-			current_state.name.to_lower()
-		)
+	#
+	#print(
+			#"["+ self.get_parent().name +
+			#" Current State]: " + 
+			#current_state.name.to_lower()
+		#)
 
 func _input(event: InputEvent) -> void:
 	current_state.handle_input(event)

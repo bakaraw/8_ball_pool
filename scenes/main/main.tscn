@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bbsdtw4gn4dd7" path="res://scenes/main/main.gd" id="1_k2fmo"]
 [ext_resource type="PackedScene" uid="uid://b1c1gfisa2nyy" path="res://commons/shaders/CRT/CRTShader.tscn" id="2_6q06x"]
 [ext_resource type="PackedScene" uid="uid://vmemxeplkwwl" path="res://scenes/main/pool_table.tscn" id="2_l3cfh"]
-[ext_resource type="PackedScene" uid="uid://d1bjxv5s2mgi1" path="res://scenes/main/ball_spawner.tscn" id="3_k2fmo"]
+[ext_resource type="PackedScene" uid="uid://d1bjxv5s2mgi1" path="res://scenes/main/ball_manager.tscn" id="3_k2fmo"]
 [ext_resource type="Script" uid="uid://c4x8htscmhykp" path="res://commons/state_machine/state_machine.gd" id="6_ow5a4"]
 [ext_resource type="Script" uid="uid://1pje3vtv2fkt" path="res://scenes/main/states/player_initialization.gd" id="7_b1x3f"]
 [ext_resource type="Script" uid="uid://bjgumnqh8218t" path="res://scenes/main/states/player_turn_state.gd" id="7_hujxm"]
@@ -23,14 +23,14 @@ script = ExtResource("1_k2fmo")
 position = Vector2(286, 310)
 spawn_position_marker = NodePath("../CueBallSpawnPosition")
 
-[node name="BallManager" parent="." unique_id=424850098 instance=ExtResource("3_k2fmo")]
+[node name="BallManager" parent="." unique_id=424850098 node_paths=PackedStringArray("pool_table") instance=ExtResource("3_k2fmo")]
 position = Vector2(765, 310)
+pool_table = NodePath("../PoolTable")
 
-[node name="PoolTable" parent="." unique_id=2077793357 node_paths=PackedStringArray("ball_manager") instance=ExtResource("2_l3cfh")]
-ball_manager = NodePath("../BallManager")
+[node name="PoolTable" parent="." unique_id=2077793357 instance=ExtResource("2_l3cfh")]
 
 [node name="CueBallSpawnPosition" type="Marker2D" parent="." unique_id=691738561]
-position = Vector2(320, 320)
+position = Vector2(303, 320)
 
 [node name="StateMachine" type="Node" parent="." unique_id=2126996678 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("6_ow5a4")

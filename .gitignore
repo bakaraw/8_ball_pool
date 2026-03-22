@@ -27,4 +27,4 @@ mono_crash.*.json
 Thumbs.db
 
 *.tmp
-*.uid
+.vscode/

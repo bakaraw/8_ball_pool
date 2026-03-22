@@ -6,7 +6,7 @@ class_name PlayAttackCards
 func enter() -> void:
 	var main: MainScene = state_machine.get_parent()
 	var current_player = main.get_current_player()
-	print("[Current player]: ", current_player.player_name)
+	print("[Current player]: " + current_player.player_name + " - " + current_player.get_ball_type_name())
 	state_machine.change_state("playerturnstate")
 
 func exit() -> void:

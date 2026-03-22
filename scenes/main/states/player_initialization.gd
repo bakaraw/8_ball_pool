@@ -12,6 +12,7 @@ func enter() -> void:
 	print("[PLAYERS:]")
 	for player in main.players:
 		print("\t - " + player.player_name)
+	main.players[0].ball_in_hand = true
 	Globals.current_player = main.get_current_player()
 	state_machine.change_state("playattackcards")
 

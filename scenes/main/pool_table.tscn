@@ -13,55 +13,80 @@ scale = Vector2(0.74000007, 0.73999995)
 texture = ExtResource("1_243pq")
 
 [node name="Edge1" type="StaticBody2D" parent="." unique_id=163763369]
+collision_layer = 8
+collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Edge1" unique_id=1560250991]
+visibility_layer = 2
 position = Vector2(-3, -5)
 polygon = PackedVector2Array(95, 73, 71, 51, 71, -382, 551, -377, 551, -10, 554, 56, 550, 74)
 
 [node name="Edge2" type="StaticBody2D" parent="." unique_id=1575354790]
+collision_layer = 8
+collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Edge2" unique_id=306459438]
 position = Vector2(-4, -5)
 polygon = PackedVector2Array(599, 73, 595, 52, 596, -383, 1095, -383, 1082, 52, 1058, 73)
 
 [node name="Edge3" type="StaticBody2D" parent="." unique_id=1277806621]
+collision_layer = 8
+collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Edge3" unique_id=1915993163]
 position = Vector2(-5, -4)
 polygon = PackedVector2Array(1087, 104, 1111, 79, 1674, 80, 1674, 581, 1111, 580, 1087, 556)
 
 [node name="Edge4" type="StaticBody2D" parent="." unique_id=797237464]
+collision_layer = 8
+collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Edge4" unique_id=325740394]
 position = Vector2(-4, -5)
 polygon = PackedVector2Array(1056, 586, 1081, 607, 1081, 1056, 600, 1057, 592, 602, 594, 582)
 
 [node name="Edge5" type="StaticBody2D" parent="." unique_id=725489612]
+collision_layer = 8
+collision_mask = 3
 
 [node name="Polygon2D" type="CollisionPolygon2D" parent="Edge5" unique_id=321855736]
 position = Vector2(-4, -4)
 polygon = PackedVector2Array(547, 581, 550, 604, 551, 1059, 62, 1061, 64, 602, 90, 581)
 
 [node name="Edge6" type="StaticBody2D" parent="." unique_id=1568707755]
+collision_layer = 8
+collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Edge6" unique_id=2052729450]
 position = Vector2(-5, -6)
 polygon = PackedVector2Array(65, 102, 62, 550, 39, 574, -706, 577, -699, 105, 44, 79)
 
 [node name="Pocket1" parent="." unique_id=1784638614 instance=ExtResource("2_juvbm")]
-position = Vector2(54, 580)
+position = Vector2(42, 589)
+collision_layer = 128
+collision_mask = 3
 
 [node name="Pocket2" parent="." unique_id=1096659203 instance=ExtResource("2_juvbm")]
 position = Vector2(567, 597)
+collision_layer = 128
+collision_mask = 3
 
 [node name="Pocket3" parent="." unique_id=2053842121 instance=ExtResource("2_juvbm")]
-position = Vector2(1087, 586)
+position = Vector2(1096, 595)
+collision_layer = 128
+collision_mask = 3
 
 [node name="Pocket4" parent="." unique_id=1951162702 instance=ExtResource("2_juvbm")]
-position = Vector2(1086, 64)
+position = Vector2(1096, 55)
+collision_layer = 128
+collision_mask = 3
 
 [node name="Pocket5" parent="." unique_id=1386241731 instance=ExtResource("2_juvbm")]
 position = Vector2(570, 48)
+collision_layer = 128
+collision_mask = 3
 
 [node name="Pocket6" parent="." unique_id=619608057 instance=ExtResource("2_juvbm")]
-position = Vector2(57, 63)
+position = Vector2(47, 56)
+collision_layer = 128
+collision_mask = 3

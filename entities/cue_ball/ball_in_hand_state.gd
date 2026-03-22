@@ -21,10 +21,14 @@ func exit() -> void:
 
 func update(_delta: float):
 	if is_dragging:
-		cue_ball.global_position = cue_ball.get_global_mouse_position()
+		var mouse_pos = cue_ball.get_global_mouse_position()
+		cue_ball.global_position = Vector2(
+			clampf(mouse_pos.x, Globals.TABLE_MIN_X,
+			Globals.TABLE_MAX_X_BREAKING_SHOT if Globals.breaking_shot else Globals.TABLE_MAX_X),
+			clampf(mouse_pos.y, Globals.TABLE_MIN_Y, Globals.TABLE_MAX_Y)
+			)
 		is_valid_placement = _check_valid_placement()
-		has_been_clicked = true 
-		# visual feedback — red if invalid
+		has_been_clicked = true
 		cue_ball.get_node("Circle").color = Color.RED if not is_valid_placement else Color.WHITE
 	else:
 		# not dragging + mouse outside cue ball = go to aiming

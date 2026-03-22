@@ -1,6 +1,7 @@
 extends RigidBody2D
 class_name CueBall
 signal shot_taken
+signal first_contact(ball: PoolBall)
 
 var direction: Vector2 = Vector2.ZERO
 var release_force: Vector2 = Vector2.ZERO
@@ -12,6 +13,8 @@ var cue_stick_visible = true
 @onready var cue_ball_trajectory = get_node("CueBallTrajectory")
 
 var pocketed = false
+
+var _has_contacted: bool = false
 
 func _ready() -> void:
 	position = spawn_position_marker.position
@@ -25,6 +28,7 @@ func _ready() -> void:
 	z_index = 100
 	z_as_relative = false 
 	lock_rotation = true
+	body_entered.connect(_on_body_entered)
 	
 func cue_ball_pocketed(pocket: Pocket):
 	pocketed = true
@@ -53,3 +57,13 @@ func _is_cue_ball_pocketed() -> bool:
 func _is_cue_ball_moving() -> bool:
 	var threshold = 2.0
 	return linear_velocity.length_squared() > threshold
+
+func _on_body_entered(body: Node) -> void:
+	print("body entered: ", body.name, " is PoolBall: ", body is PoolBall)
+	if not _has_contacted and body is PoolBall:
+		_has_contacted = true
+		first_contact.emit(body)
+		print("First contact with: ", body.ball_type)
+
+func reset_contact() -> void:
+	_has_contacted = false

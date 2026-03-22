@@ -33,4 +33,4 @@ func handle_input(event: InputEvent):
 func _mouse_over_cue_ball() -> bool:
 	var mouse_pos = cue_ball.get_global_mouse_position()
 	var circle = cue_ball.get_node("Circle")
-	return mouse_pos.distance_to(cue_ball.global_position) <= circle.radius
+	return mouse_pos.distance_to(cue_ball.global_position) <= Globals.BALL_RADIUS

@@ -15,8 +15,42 @@ func _init(player_name: String, player_id: int) -> void:
 	self.player_name = player_name
 	self.player_id = player_id
 
-func balls_remaining() -> int:
-	return balls_to_pocket.size() - balls_pocketed.size()
-
 func all_balls_cleared() -> bool:
 	return balls_remaining() == 0
+
+func get_ball_type_name() -> String:
+	match ball_type:
+		Globals.BallType.SOLIDS:
+			return "Solids"
+		Globals.BallType.STRIPES:
+			return "Stripes"
+		Globals.BallType.EIGHT_BALL:
+			return "Eight Ball"
+		Globals.BallType.UNASSIGNED:
+			return "Unassigned"
+		_:
+			return "Unknown"
+			
+func get_ball_color_name() -> String:
+	match ball_color:
+		Color.GOLD:
+			return "Gold"
+		Color.DARK_RED:
+			return "Dark Red"
+		Color.BLACK:
+			return "Black"
+		Color.WHITE:
+			return "White"
+		_:
+			return "Unknown"
+			
+func balls_remaining() -> int:
+	return maxi(0, balls_to_pocket.size() - balls_pocketed.size())
+	
+func reset() -> void:
+	ball_type = Globals.BallType.UNASSIGNED
+	ball_color = Color.TRANSPARENT
+	ball_in_hand = false
+	fouls = 0
+	balls_to_pocket.clear()
+	balls_pocketed.clear()
