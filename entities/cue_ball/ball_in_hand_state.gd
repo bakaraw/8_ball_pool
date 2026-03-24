@@ -32,9 +32,7 @@ func update(_delta: float):
 		cue_ball.get_node("Circle").color = Color.RED if not is_valid_placement else Color.WHITE
 	else:
 		# not dragging + mouse outside cue ball = go to aiming
-		if has_been_clicked and not _mouse_over_cue_ball():
-			if is_valid_placement:
-				state_machine.change_state("aimingstate")
+		_check_transition()
 
 func handle_input(event: InputEvent):
 	if event is InputEventMouseButton:
@@ -49,9 +47,10 @@ func _mouse_over_cue_ball() -> bool:
 	var circle = cue_ball.get_node("Circle")
 	return mouse_pos.distance_to(cue_ball.global_position) <= circle.radius
 
+## if mouse is outside cue ball → switch to aiming
 func _check_transition() -> void:
-	# if mouse is outside cue ball → switch to aiming
 	if not _mouse_over_cue_ball():
+		cue_ball.global_position = cue_ball.position
 		state_machine.change_state("aimingstate")
 
 func _check_valid_placement() -> bool:

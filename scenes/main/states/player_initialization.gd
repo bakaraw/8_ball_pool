@@ -7,23 +7,9 @@ class_name PlayerInitialization
 @export var main: MainScene
 
 func enter() -> void:
-	main.players.append(Player.new("Player 1", 1))
-	main.players.append(Player.new("Player 2", 2))
+	main.turn_manager.setup("Player 1", "Player 2")
 	print("[PLAYERS:]")
-	for player in main.players:
-		print("\t - " + player.player_name)
-	main.players[0].ball_in_hand = true
-	Globals.current_player = main.get_current_player()
+	for player in main.turn_manager.players:
+		print("\t - " + player.player_name + " - remaining: " + str(player.balls_remaining()))
+	Globals.current_player = main.turn_manager.get_current_player()
 	state_machine.change_state("playattackcards")
-
-func exit() -> void:
-	pass
-	
-func update(_delta: float):
-	pass
-	
-func handle_input(_event: InputEvent):
-	pass
-
-func physics_update(_delta: float):
-	pass

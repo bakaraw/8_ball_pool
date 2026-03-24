@@ -2,8 +2,7 @@ extends Node
 
 # Constant Global Variables/Enums
 enum BallType { UNASSIGNED, SOLIDS, STRIPES, EIGHT_BALL}
-enum GameState { WAITING, PLAYER_TURN, BALLS_MOVING, RESOLVE, GAME_OVER }
-enum FoulType { NONE, SCRATCH, WRONG_BALL, EIGHT_BALL_EARLY }
+enum FoulType { NONE, SCRATCH, WRONG_BALL, EIGHT_BALL_EARLY, NO_CANTACT}
 
 const MAX_PLAYERS := 2
 const MAX_DRAG := 100.0
@@ -15,7 +14,6 @@ const TABLE_MIN_X: float = 60.0 + BALL_RADIUS
 const TABLE_MAX_X: float = 1080.0 - BALL_RADIUS
 const TABLE_MIN_Y: float = 70.0 + BALL_RADIUS
 const TABLE_MAX_Y: float = 580.0 - BALL_RADIUS
-
 const TABLE_MAX_X_BREAKING_SHOT: float = 320.0 - BALL_RADIUS
 
 const DEBUG = false

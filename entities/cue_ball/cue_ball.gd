@@ -3,6 +3,7 @@ class_name CueBall
 signal shot_taken
 signal first_contact(ball: PoolBall)
 
+var ball_type: Globals.BallType = Globals.BallType.UNASSIGNED
 var direction: Vector2 = Vector2.ZERO
 var release_force: Vector2 = Vector2.ZERO
 var cue_stick_visible = true
@@ -13,7 +14,6 @@ var cue_stick_visible = true
 @onready var cue_ball_trajectory = get_node("CueBallTrajectory")
 
 var pocketed = false
-
 var _has_contacted: bool = false
 
 func _ready() -> void:
@@ -42,10 +42,6 @@ func cue_ball_pocketed(pocket: Pocket):
 	await tween.finished
 	kill_velocity()
 
-	#var sm = get_node("StateMachine")
-	#sm.change_state("foulstate")
-	#queue_free()
-
 func kill_velocity():
 	linear_velocity = Vector2.ZERO
 	angular_velocity = 0.0
@@ -59,11 +55,22 @@ func _is_cue_ball_moving() -> bool:
 	return linear_velocity.length_squared() > threshold
 
 func _on_body_entered(body: Node) -> void:
-	print("body entered: ", body.name, " is PoolBall: ", body is PoolBall)
+	#print("body entered: ", body.name, " is PoolBall: ", body is PoolBall)
 	if not _has_contacted and body is PoolBall:
 		_has_contacted = true
 		first_contact.emit(body)
-		print("First contact with: ", body.ball_type)
+		#print("First contact with: ", body.ball_type)
 
 func reset_contact() -> void:
 	_has_contacted = false
+
+func reset() -> void:
+	## Called by FoulHandler after a scratch.
+	pocketed = false
+	freeze = false
+	kill_velocity()
+	global_position = spawn_position_marker.global_position
+	var circle: = $Circle
+	circle.radius = Globals.BALL_RADIUS
+	circle.color = Color(circle.color.r, circle.color.g, circle.color.b, 1.0)
+	circle.drop_shadow_on = true

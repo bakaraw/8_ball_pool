@@ -45,7 +45,10 @@ func get_ball_color_name() -> String:
 			return "Unknown"
 			
 func balls_remaining() -> int:
-	return maxi(0, balls_to_pocket.size() - balls_pocketed.size())
+	var still_on_table := balls_to_pocket.filter(func(b: PoolBall): 
+		return not b.is_ball_pocketed)
+	return still_on_table.size()
+	#return maxi(0, balls_to_pocket.size() - balls_pocketed.size())
 	
 func reset() -> void:
 	ball_type = Globals.BallType.UNASSIGNED
@@ -54,3 +57,6 @@ func reset() -> void:
 	fouls = 0
 	balls_to_pocket.clear()
 	balls_pocketed.clear()
+
+func is_assigned() -> bool:
+	return ball_type != Globals.BallType.UNASSIGNED

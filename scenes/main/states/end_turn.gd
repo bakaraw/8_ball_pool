@@ -2,12 +2,13 @@ extends State
 class_name EndTurn
 
 func enter() -> void:
-	var main: MainScene = state_machine.get_parent()
-	#print("Should Switch? " + str(main.should_switch_turn))
-	if main.should_switch_turn:
-		main.switch_turn()
+	#print("\t\tEND TURN")
+	_get_main().turn_manager.commit_turn()
 	state_machine.change_state("playattackcards")
 
+func _get_main() -> MainScene:
+	return state_machine.get_parent() as MainScene
+	
 func exit() -> void:
 	pass
 	

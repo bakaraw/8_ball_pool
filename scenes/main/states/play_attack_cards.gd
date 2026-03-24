@@ -4,11 +4,16 @@ class_name PlayAttackCards
 # temporary
 # to be implemented
 func enter() -> void:
-	var main: MainScene = state_machine.get_parent()
-	var current_player = main.get_current_player()
-	print("[Current player]: " + current_player.player_name + " - " + current_player.get_ball_type_name())
+	var main := _get_main()
+	var current_player = main.turn_manager.get_current_player()
+	#for i in range(10):
+		#print()
+	print("[Current player]: " + current_player.player_name.to_upper() + " - " + current_player.get_ball_type_name())
 	state_machine.change_state("playerturnstate")
-
+	
+func _get_main() -> MainScene:
+	return state_machine.get_parent() as MainScene
+	
 func exit() -> void:
 	pass
 	

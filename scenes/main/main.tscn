@@ -4,10 +4,12 @@
 [ext_resource type="Script" uid="uid://bbsdtw4gn4dd7" path="res://scenes/main/main.gd" id="1_k2fmo"]
 [ext_resource type="PackedScene" uid="uid://b1c1gfisa2nyy" path="res://commons/shaders/CRT/CRTShader.tscn" id="2_6q06x"]
 [ext_resource type="PackedScene" uid="uid://vmemxeplkwwl" path="res://scenes/main/pool_table.tscn" id="2_l3cfh"]
-[ext_resource type="PackedScene" uid="uid://d1bjxv5s2mgi1" path="res://scenes/main/ball_manager.tscn" id="3_k2fmo"]
+[ext_resource type="PackedScene" uid="uid://d1bjxv5s2mgi1" path="res://scenes/main/helpers/ball_manager.tscn" id="3_k2fmo"]
 [ext_resource type="Script" uid="uid://c4x8htscmhykp" path="res://commons/state_machine/state_machine.gd" id="6_ow5a4"]
+[ext_resource type="Script" uid="uid://ck3jv6uf5vj2r" path="res://scenes/main/helpers/turn_manager.gd" id="6_raeie"]
 [ext_resource type="Script" uid="uid://1pje3vtv2fkt" path="res://scenes/main/states/player_initialization.gd" id="7_b1x3f"]
 [ext_resource type="Script" uid="uid://bjgumnqh8218t" path="res://scenes/main/states/player_turn_state.gd" id="7_hujxm"]
+[ext_resource type="Script" uid="uid://qvuxkj7x50ej" path="res://scenes/main/helpers/foul_handler.gd" id="7_hxu8e"]
 [ext_resource type="Script" uid="uid://dwfnwbmhpk47i" path="res://scenes/main/states/play_attack_cards.gd" id="7_yyfjg"]
 [ext_resource type="Script" uid="uid://c2nbn00qmgjlj" path="res://scenes/main/states/play_defensive_cards.gd" id="10_a8run"]
 [ext_resource type="Script" uid="uid://cdyjwavt6ku1f" path="res://scenes/main/states/ball_evaluation.gd" id="11_ouso4"]
@@ -32,6 +34,16 @@ pool_table = NodePath("../PoolTable")
 [node name="CueBallSpawnPosition" type="Marker2D" parent="." unique_id=691738561]
 position = Vector2(303, 320)
 
+[node name="TurnManager" type="Node" parent="." unique_id=1672753445]
+script = ExtResource("6_raeie")
+metadata/_custom_type_script = "uid://ck3jv6uf5vj2r"
+
+[node name="FoulHandler" type="Node" parent="." unique_id=878184584 node_paths=PackedStringArray("cue_ball", "turn_manager")]
+script = ExtResource("7_hxu8e")
+cue_ball = NodePath("../CueBall")
+turn_manager = NodePath("../TurnManager")
+metadata/_custom_type_script = "uid://qvuxkj7x50ej"
+
 [node name="StateMachine" type="Node" parent="." unique_id=2126996678 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("6_ow5a4")
 initial_state = NodePath("PlayerInitialization")
@@ -50,10 +62,8 @@ metadata/_custom_type_script = "uid://dwfnwbmhpk47i"
 script = ExtResource("7_hujxm")
 metadata/_custom_type_script = "uid://bjgumnqh8218t"
 
-[node name="BallEvaluation" type="Node" parent="StateMachine" unique_id=914241599 node_paths=PackedStringArray("ball_manager", "cue_ball")]
+[node name="BallEvaluation" type="Node" parent="StateMachine" unique_id=914241599]
 script = ExtResource("11_ouso4")
-ball_manager = NodePath("../../BallManager")
-cue_ball = NodePath("../../CueBall")
 metadata/_custom_type_script = "uid://cdyjwavt6ku1f"
 
 [node name="PlayDefensiveCards" type="Node" parent="StateMachine" unique_id=1481615829 node_paths=PackedStringArray("cue_ball")]

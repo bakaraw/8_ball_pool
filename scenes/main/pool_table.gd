@@ -9,10 +9,10 @@ class_name PoolTable
 		#var pocket = get_node("Pocket" + str(i))
 		#pocket.ball_entered.connect(_on_ball_entered)
 		#pocket.cue_ball_entered.connect(_on_cue_ball_entered)
-	##print("Player " + str(TURN + 1) + " turn")
-	##var cue_ball = get_node("CueBall")
-	##cue_ball.turn_complete.connect(_on_turn_complete)
-	##cue_ball.turn_complete.connect($Shader/UI._on_turn_complete)
+	#print("Player " + str(TURN + 1) + " turn")
+	#var cue_ball = get_node("CueBall")
+	#cue_ball.turn_complete.connect(_on_turn_complete)
+	#cue_ball.turn_complete.connect($Shader/UI._on_turn_complete)
 
 
 

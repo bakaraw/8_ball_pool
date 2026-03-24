@@ -17,6 +17,7 @@ func _ready() -> void:
 	lock_rotation = true
 	
 func ball_pocketed(pocket: Pocket):
+	is_ball_pocketed = true
 	var circle = $Circle
 	var tween = create_tween()
 	tween.set_parallel(true)  # run both tweens at the same time
