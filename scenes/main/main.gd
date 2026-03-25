@@ -1,11 +1,16 @@
 extends Node2D
+class_name MainScene
 
+var winner: Player = null
+@onready var turn_manager: TurnManager = $TurnManager
+@onready var foul_handler: FoulHandler = $FoulHandler
+@onready var ball_manager: BallManager = $BallManager
+@onready var cue_ball: CueBall = $CueBall
+@onready var state_machine: StateMachine = $StateMachine
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	cue_ball.first_contact.connect(ball_manager.set_first_contact)
+	state_machine.start()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
+func end_game(winning_player: Player) -> void:
+	winner = winning_player
