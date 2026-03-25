@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://d4ftfmekra00w"]
+
+[ext_resource type="Texture2D" uid="uid://fr57c3ne2xtf" path="res://assets/backgrounds/main_menu_bg.png" id="1_wgmux"]
+[ext_resource type="Script" uid="uid://dijl13764082q" path="res://scenes/home/main_menu.gd" id="2_menu"]
+
+[node name="MainMenu" type="Control" unique_id=818108932]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_menu")
+
+[node name="BackgroundTexture" type="TextureRect" parent="." unique_id=401453246]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_wgmux")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Vignette" type="ColorRect" parent="." unique_id=1370507071]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.3)
+
+[node name="MenuPanel" type="PanelContainer" parent="." unique_id=156454908]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 894.0
+offset_top = -219.0
+offset_right = 1214.0
+offset_bottom = 181.0
+grow_vertical = 2
+
+[node name="PanelBg" type="ColorRect" parent="MenuPanel" unique_id=127829302]
+layout_mode = 2
+color = Color(0.04, 0.035, 0.07, 0.75)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuPanel" unique_id=1230997324]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 12
+
+[node name="Spacer1" type="Control" parent="MenuPanel/VBoxContainer" unique_id=873154354]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="MenuPanel/VBoxContainer" unique_id=1898590523]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.78, 0.35, 1)
+theme_override_colors/font_shadow_color = Color(0.5, 0.35, 0.05, 0.7)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 42
+text = "8-BALL POOL"
+horizontal_alignment = 1
+
+[node name="SubtitleLabel" type="Label" parent="MenuPanel/VBoxContainer" unique_id=308305395]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.65, 0.5, 0.7)
+theme_override_font_sizes/font_size = 13
+text = "Classic Billiards"
+horizontal_alignment = 1
+
+[node name="Divider" type="HSeparator" parent="MenuPanel/VBoxContainer" unique_id=1943379230]
+layout_mode = 2
+
+[node name="Spacer2" type="Control" parent="MenuPanel/VBoxContainer" unique_id=607359151]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="ButtonContainer" type="VBoxContainer" parent="MenuPanel/VBoxContainer" unique_id=856345893]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PlayButton" type="Button" parent="MenuPanel/VBoxContainer/ButtonContainer" unique_id=1602317842]
+layout_mode = 2
+text = "PLAY"
+
+[node name="MultiplayerButton" type="Button" parent="MenuPanel/VBoxContainer/ButtonContainer" unique_id=589980909]
+layout_mode = 2
+text = "MULTIPLAYER"
+
+[node name="SettingsButton" type="Button" parent="MenuPanel/VBoxContainer/ButtonContainer" unique_id=854527955]
+layout_mode = 2
+text = "SETTINGS"
+
+[node name="QuitButton" type="Button" parent="MenuPanel/VBoxContainer/ButtonContainer" unique_id=1754800794]
+layout_mode = 2
+text = "QUIT"
+
+[node name="Spacer3" type="Control" parent="MenuPanel/VBoxContainer" unique_id=1123037514]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="VersionLabel" type="Label" parent="." unique_id=886465016]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -30.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.5, 0.45, 0.35, 0.4)
+theme_override_font_sizes/font_size = 11
+text = "v0.1.0"
+horizontal_alignment = 2
+
+[node name="AmbientPlayer" type="AudioStreamPlayer" parent="." unique_id=1109763143]
+volume_db = -10.0
+autoplay = true
