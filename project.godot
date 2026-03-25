@@ -22,12 +22,12 @@ config/icon="res://icon.svg"
 [autoload]
 
 SceneManager="*res://commons/scene_manager.gd"
+Globals="*uid://cmu3gh1i5s5yp"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
-Globals="*uid://cmu3gh1i5s5yp"
 
 [physics]
 
