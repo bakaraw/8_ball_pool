@@ -1,0 +1,405 @@
+[gd_scene format=3 uid="uid://bduoje8advjc7"]
+
+[ext_resource type="Script" uid="uid://qylselerm04o" path="res://scenes/settings/settings.gd" id="1_settings"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_settings")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.06, 0.06, 0.1, 1)
+
+[node name="Vignette" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.25)
+
+[node name="MainPanel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -340.0
+offset_top = -280.0
+offset_right = 340.0
+offset_bottom = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelBg" type="ColorRect" parent="MainPanel"]
+layout_mode = 2
+color = Color(0.04, 0.035, 0.07, 0.88)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainPanel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TitleLabel" type="Label" parent="MainPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.78, 0.35, 1)
+theme_override_colors/font_shadow_color = Color(0.5, 0.35, 0.05, 0.5)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 30
+text = "SETTINGS"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MainPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="TabContainer" type="TabContainer" parent="MainPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+tab_alignment = 1
+
+[node name="Audio" type="MarginContainer" parent="MainPanel/VBoxContainer/TabContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MainPanel/VBoxContainer/TabContainer/Audio"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="VBox" type="VBoxContainer" parent="MainPanel/VBoxContainer/TabContainer/Audio/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 14
+
+[node name="DescLabel" type="Label" parent="MainPanel/VBoxContainer/TabContainer/Audio/ScrollContainer/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.5, 0.4, 0.7)
+theme_override_font_sizes/font_size = 12
+text = "Adjust volume levels for the game."
+
+[node name="MasterRow" type="HBoxContainer" parent="MainPanel/VBoxContainer/TabContainer/Audio/ScrollContainer/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="MasterLabel" type="Label" parent="MainPanel/VBoxContainer/TabContainer/Audio/ScrollContainer/VBox/MasterRow"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.75, 0.6, 1)
+theme_override_font_sizes/font_size = 15
+text = "Master Volume"
+vertical_alignment = 1
+
+[node name="MasterSlider" type="HSlider" parent="MainPanel/VBoxContainer/TabContainer/Audio/ScrollContainer/VBox/MasterRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="MasterValue" type="Label" parent="MainPanel/VBoxContainer/TabContainer/Audio/ScrollContainer/VBox/MasterRow"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.78, 0.35, 1)
+theme_override_font_sizes/font_size = 14
+text = "100%"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MusicRow" type="HBoxContainer" parent="MainPanel/VBoxContainer/TabContainer/Audio/ScrollContainer/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="MusicLabel" type="Label" parent="MainPanel/VBoxContainer/TabContainer/Audio/ScrollContainer/VBox/MusicRow"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.75, 0.6, 1)
+theme_override_font_sizes/font_size = 15
+text = "Music"
+vertical_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="MainPanel/VBoxContainer/TabContainer/Audio/ScrollContainer/VBox/MusicRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+value = 0.8
+
+[node name="MusicValue" type="Label" parent="MainPanel/VBoxContainer/TabContainer/Audio/ScrollContainer/VBox/MusicRow"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.78, 0.35, 1)
+theme_override_font_sizes/font_size = 14
+text = "80%"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SFXRow" type="HBoxContainer" parent="MainPanel/VBoxContainer/TabContainer/Audio/ScrollContainer/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="SFXLabel" type="Label" parent="MainPanel/VBoxContainer/TabContainer/Audio/ScrollContainer/VBox/SFXRow"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.75, 0.6, 1)
+theme_override_font_sizes/font_size = 15
+text = "Sound Effects"
+vertical_alignment = 1
+
+[node name="SFXSlider" type="HSlider" parent="MainPanel/VBoxContainer/TabContainer/Audio/ScrollContainer/VBox/SFXRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+value = 0.8
+
+[node name="SFXValue" type="Label" parent="MainPanel/VBoxContainer/TabContainer/Audio/ScrollContainer/VBox/SFXRow"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.78, 0.35, 1)
+theme_override_font_sizes/font_size = 14
+text = "80%"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Display" type="MarginContainer" parent="MainPanel/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MainPanel/VBoxContainer/TabContainer/Display"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="VBox" type="VBoxContainer" parent="MainPanel/VBoxContainer/TabContainer/Display/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 14
+
+[node name="DescLabel" type="Label" parent="MainPanel/VBoxContainer/TabContainer/Display/ScrollContainer/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.5, 0.4, 0.7)
+theme_override_font_sizes/font_size = 12
+text = "Configure display and visual settings."
+
+[node name="FullscreenRow" type="HBoxContainer" parent="MainPanel/VBoxContainer/TabContainer/Display/ScrollContainer/VBox"]
+layout_mode = 2
+
+[node name="FullscreenLabel" type="Label" parent="MainPanel/VBoxContainer/TabContainer/Display/ScrollContainer/VBox/FullscreenRow"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.75, 0.6, 1)
+theme_override_font_sizes/font_size = 15
+text = "Fullscreen"
+vertical_alignment = 1
+
+[node name="FullscreenToggle" type="CheckButton" parent="MainPanel/VBoxContainer/TabContainer/Display/ScrollContainer/VBox/FullscreenRow"]
+layout_mode = 2
+
+[node name="VsyncRow" type="HBoxContainer" parent="MainPanel/VBoxContainer/TabContainer/Display/ScrollContainer/VBox"]
+layout_mode = 2
+
+[node name="VsyncLabel" type="Label" parent="MainPanel/VBoxContainer/TabContainer/Display/ScrollContainer/VBox/VsyncRow"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.75, 0.6, 1)
+theme_override_font_sizes/font_size = 15
+text = "VSync"
+vertical_alignment = 1
+
+[node name="VsyncToggle" type="CheckButton" parent="MainPanel/VBoxContainer/TabContainer/Display/ScrollContainer/VBox/VsyncRow"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CRTRow" type="HBoxContainer" parent="MainPanel/VBoxContainer/TabContainer/Display/ScrollContainer/VBox"]
+layout_mode = 2
+
+[node name="CRTLabel" type="Label" parent="MainPanel/VBoxContainer/TabContainer/Display/ScrollContainer/VBox/CRTRow"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.75, 0.6, 1)
+theme_override_font_sizes/font_size = 15
+text = "CRT Filter"
+vertical_alignment = 1
+
+[node name="CRTToggle" type="CheckButton" parent="MainPanel/VBoxContainer/TabContainer/Display/ScrollContainer/VBox/CRTRow"]
+layout_mode = 2
+button_pressed = true
+
+[node name="ResolutionRow" type="HBoxContainer" parent="MainPanel/VBoxContainer/TabContainer/Display/ScrollContainer/VBox"]
+layout_mode = 2
+
+[node name="ResolutionLabel" type="Label" parent="MainPanel/VBoxContainer/TabContainer/Display/ScrollContainer/VBox/ResolutionRow"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.75, 0.6, 1)
+theme_override_font_sizes/font_size = 15
+text = "Resolution"
+vertical_alignment = 1
+
+[node name="ResolutionOption" type="OptionButton" parent="MainPanel/VBoxContainer/TabContainer/Display/ScrollContainer/VBox/ResolutionRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Controls" type="MarginContainer" parent="MainPanel/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MainPanel/VBoxContainer/TabContainer/Controls"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="VBox" type="VBoxContainer" parent="MainPanel/VBoxContainer/TabContainer/Controls/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 14
+
+[node name="DescLabel" type="Label" parent="MainPanel/VBoxContainer/TabContainer/Controls/ScrollContainer/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.5, 0.4, 0.7)
+theme_override_font_sizes/font_size = 12
+text = "Adjust control sensitivity and input preferences."
+
+[node name="SensitivityRow" type="HBoxContainer" parent="MainPanel/VBoxContainer/TabContainer/Controls/ScrollContainer/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="SensLabel" type="Label" parent="MainPanel/VBoxContainer/TabContainer/Controls/ScrollContainer/VBox/SensitivityRow"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.75, 0.6, 1)
+theme_override_font_sizes/font_size = 15
+text = "Cue Sensitivity"
+vertical_alignment = 1
+
+[node name="SensitivitySlider" type="HSlider" parent="MainPanel/VBoxContainer/TabContainer/Controls/ScrollContainer/VBox/SensitivityRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="SensitivityValue" type="Label" parent="MainPanel/VBoxContainer/TabContainer/Controls/ScrollContainer/VBox/SensitivityRow"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.78, 0.35, 1)
+theme_override_font_sizes/font_size = 14
+text = "50%"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="AimLineRow" type="HBoxContainer" parent="MainPanel/VBoxContainer/TabContainer/Controls/ScrollContainer/VBox"]
+layout_mode = 2
+
+[node name="AimLabel" type="Label" parent="MainPanel/VBoxContainer/TabContainer/Controls/ScrollContainer/VBox/AimLineRow"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.75, 0.6, 1)
+theme_override_font_sizes/font_size = 15
+text = "Show Aim Line"
+vertical_alignment = 1
+
+[node name="AimLineToggle" type="CheckButton" parent="MainPanel/VBoxContainer/TabContainer/Controls/ScrollContainer/VBox/AimLineRow"]
+layout_mode = 2
+button_pressed = true
+
+[node name="InvertRow" type="HBoxContainer" parent="MainPanel/VBoxContainer/TabContainer/Controls/ScrollContainer/VBox"]
+layout_mode = 2
+
+[node name="InvertLabel" type="Label" parent="MainPanel/VBoxContainer/TabContainer/Controls/ScrollContainer/VBox/InvertRow"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.75, 0.6, 1)
+theme_override_font_sizes/font_size = 15
+text = "Invert Drag"
+vertical_alignment = 1
+
+[node name="InvertToggle" type="CheckButton" parent="MainPanel/VBoxContainer/TabContainer/Controls/ScrollContainer/VBox/InvertRow"]
+layout_mode = 2
+
+[node name="Gameplay" type="MarginContainer" parent="MainPanel/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MainPanel/VBoxContainer/TabContainer/Gameplay"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="VBox" type="VBoxContainer" parent="MainPanel/VBoxContainer/TabContainer/Gameplay/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 14
+
+[node name="DescLabel" type="Label" parent="MainPanel/VBoxContainer/TabContainer/Gameplay/ScrollContainer/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.5, 0.4, 0.7)
+theme_override_font_sizes/font_size = 12
+text = "Customize gameplay preferences and difficulty."
+
+[node name="DifficultyRow" type="HBoxContainer" parent="MainPanel/VBoxContainer/TabContainer/Gameplay/ScrollContainer/VBox"]
+layout_mode = 2
+
+[node name="DiffLabel" type="Label" parent="MainPanel/VBoxContainer/TabContainer/Gameplay/ScrollContainer/VBox/DifficultyRow"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.75, 0.6, 1)
+theme_override_font_sizes/font_size = 15
+text = "Difficulty"
+vertical_alignment = 1
+
+[node name="DifficultyOption" type="OptionButton" parent="MainPanel/VBoxContainer/TabContainer/Gameplay/ScrollContainer/VBox/DifficultyRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TrailsRow" type="HBoxContainer" parent="MainPanel/VBoxContainer/TabContainer/Gameplay/ScrollContainer/VBox"]
+layout_mode = 2
+
+[node name="TrailsLabel" type="Label" parent="MainPanel/VBoxContainer/TabContainer/Gameplay/ScrollContainer/VBox/TrailsRow"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.75, 0.6, 1)
+theme_override_font_sizes/font_size = 15
+text = "Ball Trails"
+vertical_alignment = 1
+
+[node name="TrailsToggle" type="CheckButton" parent="MainPanel/VBoxContainer/TabContainer/Gameplay/ScrollContainer/VBox/TrailsRow"]
+layout_mode = 2
+
+[node name="TimerRow" type="HBoxContainer" parent="MainPanel/VBoxContainer/TabContainer/Gameplay/ScrollContainer/VBox"]
+layout_mode = 2
+
+[node name="TimerLabel" type="Label" parent="MainPanel/VBoxContainer/TabContainer/Gameplay/ScrollContainer/VBox/TimerRow"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.75, 0.6, 1)
+theme_override_font_sizes/font_size = 15
+text = "Shot Timer"
+vertical_alignment = 1
+
+[node name="TimerToggle" type="CheckButton" parent="MainPanel/VBoxContainer/TabContainer/Gameplay/ScrollContainer/VBox/TimerRow"]
+layout_mode = 2
+
+[node name="ButtonRow" type="HBoxContainer" parent="MainPanel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 16
+
+[node name="BackButton" type="Button" parent="MainPanel/VBoxContainer/ButtonRow"]
+layout_mode = 2
+text = "BACK"
+
+[node name="ResetButton" type="Button" parent="MainPanel/VBoxContainer/ButtonRow"]
+layout_mode = 2
+text = "RESET DEFAULTS"
+
+[node name="ApplyButton" type="Button" parent="MainPanel/VBoxContainer/ButtonRow"]
+layout_mode = 2
+text = "APPLY"

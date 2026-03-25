@@ -15,6 +15,15 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="8_pool_ball"
-run/main_scene="uid://bp3ysfpphq4kk"
+run/main_scene="res://scenes/splash/splash_screen.tscn"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SceneManager="*res://commons/scene_manager.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
