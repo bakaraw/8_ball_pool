@@ -10,9 +10,9 @@ func _ready()-> void:
 	z_index = 100
 	z_as_relative = false
 	y_sort_enabled = false
-	
-func _process(_delta: float) -> void:
-	queue_redraw()
+	#
+#func _process(_delta: float) -> void:
+	#queue_redraw()
 	
 func _draw() -> void:
 	draw_cue_stick_placeholder(-cue_ball.direction)

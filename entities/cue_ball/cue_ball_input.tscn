@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://cneffgc3gx6e2"]
-
-[ext_resource type="Script" uid="uid://tesl2w20dmge" path="res://entities/cue_ball/cue_ball_input.gd" id="1_gxua2"]
-
-[node name="CueBallInput" type="Node2D" unique_id=1369440188]
-script = ExtResource("1_gxua2")

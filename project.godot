@@ -27,3 +27,8 @@ SceneManager="*res://commons/scene_manager.gd"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+Globals="*uid://cmu3gh1i5s5yp"
+
+[physics]
+
+common/physics_ticks_per_second=120
